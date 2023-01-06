@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     private Vector3 position;
     private bool positionIsFounded;
     private GameController gameController;
+    public Transform platform;
     private void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -15,7 +16,7 @@ public class Tower : MonoBehaviour
     public Vector3 GetPosition()
     {
         if (positionIsFounded) return position;
-        position = transform.position;
+        position = platform.position;
         positionIsFounded = true;
         return position;
     }
